@@ -1,0 +1,16 @@
+var isValid = function(s) {
+    let awaitingBrack = []
+        
+    for(let symbol=0; symbol<symbol.length; symbol++){
+        if(s[symbol] == "("){
+           awaitingBrack.push(')')
+           } else if(s[symbol] == '['){
+            awaitingBrack.push(']')
+            } else if(s[symbol] == '{'){
+            awaitingBrack.push('}')
+            } else if (awaitingBrack.pop() !== s[symbol]) {
+            return false;
+        }
+    }
+    return !awaitingBrack.length;
+};
