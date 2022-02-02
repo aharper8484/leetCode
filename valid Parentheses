@@ -1,16 +1,16 @@
 var isValid = function(s) {
-    let awaitingBrack = []
+    let awaitingBracket = [];
         
-    for(let symbol=0; symbol<symbol.length; symbol++){
-        if(s[symbol] == "("){
-           awaitingBrack.push(')')
+    for(let symbol=0; symbol<=s.length; symbol++){
+        if(s[symbol] == '('){
+           awaitingBracket.push(')')
            } else if(s[symbol] == '['){
-            awaitingBrack.push(']')
+            awaitingBracket.push(']')
             } else if(s[symbol] == '{'){
-            awaitingBrack.push('}')
-            } else if (awaitingBrack.pop() !== s[symbol]) {
+            awaitingBracket.push('}')
+            } else if (awaitingBracket.pop() !== s[symbol]) {
             return false;
         }
     }
-    return !awaitingBrack.length;
+    return !awaitingBracket.length;
 };
